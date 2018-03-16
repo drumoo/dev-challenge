@@ -1,7 +1,7 @@
-# dev challenge
-Desafios para você que quer trabalhar conosco!
+# Drumoo - Full Stack Developer Challenge
+Desafio para você que quer trabalhar conosco!
 
-#### - Sobre o desafio:
+#### - Para responder o desafio:
 
 Fork este repositório e faça o desafio em um branch com o seu nome (exemplo: nome-sobrenome).
 
@@ -59,12 +59,12 @@ Assim:
 - o frontend vai exibir os resultados agrupados por tipo de objeto  
 
 
-#### Dicas?
+#### - Dicas?
 
 Keep it Simple!  :)
 
 
-#### Em caso de dúvidas, [abra uma issue](https://github.com/drumoo/dev-challenge/issues). Não tenha vergonha de perguntar.
+#### Em caso de dúvidas, [abra uma issue](https://github.com/drumoo/dev-challenge/issues).  ;)
 
 
 #### Até logo e bom trabalho!
