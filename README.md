@@ -1,7 +1,7 @@
 # dev challenge
 Desafios para você que quer trabalhar conosco!
 
-#### - Mais sobre o desafio...
+#### - Sobre o desafio:
 
 Fork este repositório e faça o desafio em um branch com o seu nome (exemplo: nome-sobrenome).
 
@@ -64,7 +64,7 @@ Assim:
 Keep it Simple!  :)
 
 
-#### Em caso de dúvidas, abra uma issue. Não tenha vergonha de perguntar.
+#### Em caso de dúvidas, [abra uma issue](https://github.com/drumoo/dev-challenge/issues). Não tenha vergonha de perguntar.
 
 
 #### Até logo e bom trabalho!
