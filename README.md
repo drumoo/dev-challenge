@@ -67,4 +67,6 @@ Keep it Simple!  :)
 #### Em caso de dúvidas, [abra uma issue](https://github.com/drumoo/dev-challenge/issues).  ;)
 
 
+
 #### Até logo e bom trabalho!
+drumoo team
