@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 class="mt-4 mb-4">
+    Bem vindo ao {{ title }}!
+  </h1>
+  <figure>
+    <img width="300" alt="Logo Mult-Search" src="logo_multisearch.png">
+  </figure>
+</div>
+<div class="col-8 offset-2">
+  <form class="form">
+    <div class="input-group">
+      <input type="text" class="form-control col-12" placeholder="Busca" aria-label="Busca" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button class="input-group-text btn" id="basic-addon2">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="text-secondary mt-3 mb-3">
+    <p>Foram encontrardos {{total}} resultados.</p>
+    data: {{data.length | json}} : 
+    data: {{data.length | async}} :
+    <div *ngIf="(data | async)?.length==0">No records found.</div>
+  </div>
+  <div>
+    <div class="card" style="width: 100%;">
+      <div class="card-header">
+        Pedidos
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tr *ngFor="let item of data | async">
+            <td class="text-danger">
+              <u>#{{item.EquipmentID}}</u>
+            </td>
+            <td>{{item.EquipmentName}}</td>
+            <td>Qtd: {{item.quantidade}} pc</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
