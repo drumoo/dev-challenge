@@ -6,10 +6,12 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { SearchService } from './search.service';
+import { SeachResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SeachResultComponent
   ],
   imports: [
     BrowserModule,

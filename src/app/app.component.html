@@ -1,10 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 class="mt-4 mb-4">
-    Bem vindo ao {{ title }}!
-  </h1>
-  <figure>
-    <img width="300" alt="Logo Mult-Search" src="logo_multisearch.png">
+<div class="text-center">
+  <figure class="mb-0">
+    <img class="col-3" alt="Logo Mult-Search" src="app/images/logo_multisearch.png">
   </figure>
 </div>
 <div class="col-8 offset-2">
@@ -19,27 +15,11 @@
     </div>
   </form>
   <div class="text-secondary mt-3 mb-3">
-    <p>Foram encontrardos {{total}} resultados.</p>
-    data: {{data.length | json}} : 
-    data: {{data.length | async}} :
-    <div *ngIf="(data | async)?.length==0">No records found.</div>
+    <p>Foram encontrardo(s) {{total}} resultado(s).</p>
   </div>
-  <div>
-    <div class="card" style="width: 100%;">
-      <div class="card-header">
-        Pedidos
-      </div>
-      <div class="card-body">
-        <table class="table">
-          <tr *ngFor="let item of data | async">
-            <td class="text-danger">
-              <u>#{{item.EquipmentID}}</u>
-            </td>
-            <td>{{item.EquipmentName}}</td>
-            <td>Qtd: {{item.quantidade}} pc</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
+  <app-search-result [data]="data.Sales_Orders" [title]="'Pedido de Venda'" [className]="'Sales_Order'"></app-search-result>
+  <app-search-result [data]="data.Purchase_Orders" [title]="'Pedido de Compra'" [className]="'Purchase_Order'"></app-search-result>
+  <app-search-result [data]="data.Materials" [title]="'Produtos'" [className]="'Material'"></app-search-result>
+  <app-search-result [data]="data.Workforces" [title]="'Mão de Obra'" [className]="'Workforce'"></app-search-result>
+  <app-search-result [data]="data.Equipments" [title]="'Equipamentos'" [className]="'Equipment'"></app-search-result>
 </div>

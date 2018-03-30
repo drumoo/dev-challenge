@@ -1,0 +1,17 @@
+<div class="card mt-3" style="width: 100%;">
+  <div class="card-header">
+    <h3 class="d-inline-block mr-auto w-75">{{title}}</h3>
+    <p class="d-inline-block text-secondary">({{_data.length}} iten(s) encontrado(s)</p>
+  </div>
+  <div class="card-body">
+    <table class="table table-sm">
+      <tr *ngFor="let item of _data">
+        <td class="text-danger">
+          <u>#{{item.id()}}</u>
+        </td>
+        <td>{{item.name()}}</td>
+        <td *ngIf="(item.quantity())>0">Qtd: {{item.quantity()}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
