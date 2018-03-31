@@ -20,7 +20,10 @@ export class SeachResultComponent implements OnInit {
 
   @Input()
   set data(data: Array<SearchResultBase>) {
-    if (data != null)
+    console.log("search.data: " + this.className + JSON.stringify(data));
+
+    if (data != null) {
+      this._data = new Array<SearchResultBase>();
       data.forEach(element => {
         // Usando reflection não está funcionando, mas deveria funcionar
         //var equipment = window(data[0].constructor.name);
@@ -28,6 +31,8 @@ export class SeachResultComponent implements OnInit {
         Object.assign(item, element);
         this._data.push(item);
       });
+    }
+
   }
   constructor() {
 

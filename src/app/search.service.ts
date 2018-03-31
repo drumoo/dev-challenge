@@ -9,15 +9,15 @@ import { SearchDTO } from './domain/searchDTO';
 
 @Injectable()
 export class SearchService {
-  
+  private _apiURL: string = "http://localhost:58571";
   constructor(private http: Http) {}
 
   private dataSource = new BehaviorSubject<any>([]);
   currentDataSource = this.dataSource.asObservable();
 
-  getData(): Observable<SearchDTO>  {
-        return this.http.get('/data/data.json')
+  getData(text: string): Observable<SearchDTO>  {
+        return this.http.get(this._apiURL + "/api/Search/" + text)
            .map((res:Response) => <SearchDTO>res.json())
-          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+          .catch((error:any) => Observable.throw(JSON.stringify(error.json()) + '.Server error.'));
   }
 }

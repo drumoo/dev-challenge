@@ -21,18 +21,26 @@ import { Purchase_Order } from './domain/purchase-order';
 })
 export class AppComponent {
   title = 'Mult-Search';
-
+  text: string = "";
   total: number;
   result: Observable<SearchDTO>;
-  data: SearchDTO;
+  data: SearchDTO = new SearchDTO();
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
-     this.data = new SearchDTO();
-    this.searchService.getData().subscribe(res => { 
+    this.search();
+    // this.searchService.getData(this.text).subscribe(res => {
+    //   Object.assign(this.data, res);
+    //   this.total = this.data.Equipments.length + this.data.Materials.length + this.data.Sales_Orders.length + this.data.Purchase_Orders.length + this.data.Workforces.length;
+
+    // });
+  }
+
+  private search() {
+    this.searchService.getData(this.text).subscribe(res => {
       Object.assign(this.data, res);
       this.total = this.data.Equipments.length + this.data.Materials.length + this.data.Sales_Orders.length + this.data.Purchase_Orders.length + this.data.Workforces.length;
-      
-    } );
+
+    });
   }
 }
