@@ -29,11 +29,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.search();
-    // this.searchService.getData(this.text).subscribe(res => {
-    //   Object.assign(this.data, res);
-    //   this.total = this.data.Equipments.length + this.data.Materials.length + this.data.Sales_Orders.length + this.data.Purchase_Orders.length + this.data.Workforces.length;
-
-    // });
   }
 
   private search() {

@@ -20,7 +20,7 @@ namespace MultiSearchWebAPI.Controllers
     public IActionResult Get()
     {
       SearchService searchService = new SearchService();
-      SearchDTO searchDto = searchService.Buscar("");
+      SearchDTO searchDto = searchService.Buscar();
       return Ok(searchDto);
     }
 

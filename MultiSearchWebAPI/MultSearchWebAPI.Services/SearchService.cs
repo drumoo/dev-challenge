@@ -9,9 +9,9 @@ using Newtonsoft.Json;
 
 namespace MultSearchWebAPI.Services
 {
-  public class SearchService
+  public class SearchService : ISearchService
   {
-    public SearchDTO Buscar(string text)
+    public SearchDTO Buscar(string text = "")
     {
       using (DataContext dataContext = new DataContext())
       {
@@ -33,35 +33,13 @@ namespace MultSearchWebAPI.Services
         return dataContext.Database;
       }
     }
-
-    //private T FindAllEntities<T>(T data, string text)
-    //{
-    //  Type dataType = data.GetType();
-    //  PropertyInfo[] dataProperties = dataType.GetProperties();
-    //  foreach (var arrayObjects in dataProperties)
-    //  {
-
-    //    List<T> entity = (List<T>)arrayObjects.GetValue(dataProperties);
-
-    //    arrayObjects.SetValue(dataProperties, entity.Where(x => FindAllFields(x, text)));
-    //  }
-    //  data = (T)dataProperties.GetValue(data);
-    //    return data;
-    //}
-
+    
     private bool FindAllFields<T>(T entity, string text)
     {
       Type typeOfMyObject = entity.GetType();
       PropertyInfo[] properties = typeOfMyObject.GetProperties();
       return properties.Any(x => ContainsIgnoreCase(x.GetValue(entity).ToString(), text));
     }
-
-    //private bool FindAllFields<T>(T entity, string text)
-    //{
-    //  Type typeOfMyObject = entity.GetType();
-    //  PropertyInfo[] properties = typeOfMyObject.GetProperties();
-    //  properties.Any(x => x.GetValue())
-    //}
 
     private bool ContainsIgnoreCase(string value, string text)
     {

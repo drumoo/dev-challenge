@@ -8,7 +8,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace MultSearchWebAPI.Domain
 {
-  public class DataContext : IDisposable
+  public class DataContext : IDisposable, IDataContext
   {
     private StreamReader _streamReader;
 

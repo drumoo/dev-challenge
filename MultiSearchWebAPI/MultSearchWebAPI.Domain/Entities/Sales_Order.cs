@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MultSearchWebAPI.Domain.DTO
+namespace MultSearchWebAPI.Domain.Entities
 {
-    public class Sales_OrderDTO
+    public class Sales_Order
     {
       public int SalesOrderID { get; set; }
       public string MaterialName { get; set; }

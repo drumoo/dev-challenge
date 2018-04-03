@@ -12,9 +12,6 @@ export class SearchService {
   private _apiURL: string = "http://localhost:58571";
   constructor(private http: Http) {}
 
-  private dataSource = new BehaviorSubject<any>([]);
-  currentDataSource = this.dataSource.asObservable();
-
   getData(text: string): Observable<SearchDTO>  {
         return this.http.get(this._apiURL + "/api/Search/" + text)
            .map((res:Response) => <SearchDTO>res.json())

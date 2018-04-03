@@ -1,8 +1,8 @@
 using System;
 
-namespace MultSearchWebAPI.Domain.DTO
+namespace MultSearchWebAPI.Domain.Entities
 {
-  public class EquipmentDTO
+  public class Equipment
   {
     public string EquipmentID { get; set; }
     public string EquipmentName { get; set; }
