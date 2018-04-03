@@ -1,0 +1,16 @@
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultiSearchWebAPI.deps.json
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultiSearchWebAPI.runtimeconfig.json
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultiSearchWebAPI.runtimeconfig.dev.json
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultiSearchWebAPI.dll
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultiSearchWebAPI.pdb
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultSearchWebAPI.Domain.dll
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultSearchWebAPI.Services.dll
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultSearchWebAPI.Domain.pdb
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\bin\Release\netcoreapp2.0\MultSearchWebAPI.Services.pdb
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.csprojResolveAssemblyReference.cache
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.csproj.CoreCompileInputs.cache
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.AssemblyInfoInputs.cache
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.AssemblyInfo.cs
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.csproj.CopyComplete
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.dll
+C:\Projetos\Desafio Seed\dev-challenge\MultiSearchWebAPI\MultiSearchWebAPI\obj\Release\netcoreapp2.0\MultiSearchWebAPI.pdb

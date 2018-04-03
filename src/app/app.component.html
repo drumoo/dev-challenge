@@ -1,0 +1,25 @@
+<div class="text-center">
+  <figure class="mb-0">
+    <img class="col-3" alt="Logo Mult-Search" src="app/images/logo_multisearch.png">
+  </figure>
+</div>
+<div class="col-8 offset-2">
+  <form class="form" (ngSubmit)="search()">
+    <div class="input-group">
+      <input type="text" name="text" class="form-control col-12" placeholder="Busca" aria-label="Busca" aria-describedby="basic-addon1" [(ngModel)]="text">
+      <div class="input-group-append">
+        <button class="input-group-text btn" id="basic-addon2" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="text-secondary mt-3 mb-3">
+    <p>Foram encontrardo(s) {{total}} resultado(s).</p>
+  </div>
+  <app-search-result [data]="data.Sales_Orders" [title]="'Pedido de Venda'" [className]="'Sales_Order'"></app-search-result>
+  <app-search-result [data]="data.Purchase_Orders" [title]="'Pedido de Compra'" [className]="'Purchase_Order'"></app-search-result>
+  <app-search-result [data]="data.Materials" [title]="'Produtos'" [className]="'Material'"></app-search-result>
+  <app-search-result [data]="data.Equipments" [title]="'Equipamentos'" [className]="'Equipment'"></app-search-result>
+  <app-search-result [data]="data.Workforces" [title]="'Mão de Obra'" [className]="'Workforce'"></app-search-result>
+</div>

@@ -1,72 +1,30 @@
-# Drumoo - Full Stack Developer Challenge
-Desafio para você que quer trabalhar conosco!
+# MultSearch
 
-#### - Para responder o desafio:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-Fork este repositório e faça o desafio em um branch com o seu nome (exemplo: nome-sobrenome).
+## Development server
 
-O seu objetivo principal é transformar o desafio em um protótipo funcional.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-No seu projeto, crie um diretório chamado src. Todos os arquivos que você criar devem estar dentro desta pasta.
+## Code scaffolding
 
-Assim que concluir o seu desafio, abra um pull request com suas alterações.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Build
 
-#### - O que vou fazer?
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-O teste é simples, você deverá criar uma ferramenta de busca chamada MultiSearch. O usuário deverá digitar um texto e, como resultado, serão listados todos os objetos do nosso sistema que corresponderem a essa busca. 
+## Running unit tests
 
-Vamos partir do princípio que temos um sistema ERP que armazena diferentes informações da empresa, como: Pedidos de Venda, Pedidos de Compra, Dados de Produtos, Dados de Equipamentos e Dados de Mão de Obra. 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-O MultiSearch vai pesquisar nessas diferentes tabelas e mostrar os dados agrupados.
+## Running end-to-end tests
 
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Para mostrar o seu desempenho como Full Stack, separamos o teste em duas partes:
+## Further help
 
-#### 1) Frontend
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-No lado do Frontend, o desafio será criar uma tela que simule o resultado da nossa busca.
-Para isso:
-
-- HTML5/CSS3/JS e noções básicas de design
-- Utilizar [AngularJS](https://angularjs.org) (ou [React](https://github.com/facebook/react), [Angular2+](https://github.com/angular/angular), [Vue.js](https://github.com/vuejs/vue))
-- A pasta "layout" possui uma imagem de referência para o resultado e a logomarca já exportada para caso precise
-- Inicialmente, criar um arquivo JSON chamado "data.json" com os dados de exemplo que serão utilizados para renderizar sua aplicação
-- Sua aplicação deverá consultar seu arquivo JSON e responder com os objetos encontrados, simulando a consulta a uma API
-- Faça bom uso das tags HTML5 e CSS3
-- Sinta-se a vontade para tornar seu projeto responsivo
-- Usar [Bootstrap](https://getbootstrap.com) pode ser uma boa ideia para acelerar o processo de design
-
-#### 2) Backend
-
-No lado do Backend, o desafio será criar uma API REST para o nosso buscador.
-Para isso:
-
-- Crie um projeto de API REST preferencialmente com [ASP.NET](https://www.asp.net) (ou [Node.js](https://nodejs.org))
-- Para representar o banco de dados, disponibilizamos na pasta "data" um arquivo JSON para cada tabela do sistema. A sua aplicação deverá ler cada um desses arquivos quando estiver fazendo a busca
-- Exponha um serviço de consulta que receba uma string com o texto buscado e retorne com os objetos encontrados em todas as tabelas do sistema
-- Normalize os dados antes de enviar para o cliente
-
-#### 3) Juntando tudo  \o/
-
-Sabe o arquivo JSON que você criou no Frontend para simular os dados? Você não vai mais precisar fazer a leitura desse arquivo, pois agora o backend já está retornando os dados que vc precisa. Então você pode substituir a função de ler esse arquivo pela função de enviar a requisição para o backend. 
-
-Assim:
-- o usuário vai digitar um texto na tela
-- o texto será enviado para o backend
-- o backend vai ler os arquivos de dados e buscar quais objetos têm match com o texto buscado
-- o backend vai devolver uma lista dos resultados encontrados
-- o frontend vai exibir os resultados agrupados por tipo de objeto  
-
-
-#### - Dicas?
-
-Keep it Simple!  :)
-
-
-#### Em caso de dúvidas, [abra uma issue](https://github.com/drumoo/dev-challenge/issues).  ;)
-
-
-
-#### Até logo e bom trabalho!
-drumoo team
+## Configure the backend url in [src\app\search.services.ts]
+Default is private _apiURL: string = "http://localhost:58571";
