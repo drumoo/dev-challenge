@@ -1,0 +1,85 @@
+body{
+  font-family: verdana;
+  font-size: 13px;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search_container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.search_container button{
+  margin-left: -3px;
+  margin: 0px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  width: 60px;
+}
+
+.search_icon{
+  height: 27px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.search_container input{
+  width: 330px;
+  margin: 0px;
+  padding: 0px;
+  height: 30px;
+  vertical-align: bottom;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+}
+
+.search_container h2{
+  color: #bfbfbf;
+  font-size: 12px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #d9d9d9;
+  margin-top: 30px;
+  width: 400px;
+}
+
+table thead tr{
+  border: 1px solid #d9d9d9;
+}
+
+table thead td:first-child{
+  font-size: 18px;
+}
+
+table thead td:last-child{
+  color: #bfbfbf;
+  font-size: 10px;
+}
+
+table tbody td:first-child{
+  color: red;
+  text-decoration: underline;
+}
+
+table tbody{
+  border: 1px solid #d9d9d9;
+}
+
+table td{
+  padding: 10px;
+}
