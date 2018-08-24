@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <title>Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="../../App/Controllers/MainController.js"></script>
+    <script src="../../App/App.js"></script>
+</head>
+<body ng-app="App" ng-controller="MainController">
+    <img class="logo" src="../../images/logo_multisearch.png" />
+    <div class="search_container">
+        <form name="frm_search" method="post" action="" ng-submit="sendForm()" ng-controller="MainController">
+            <input type="text" name="txt_search" ng-model="model.search" />
+            <button name="search_button" type="submit" ng-click="sendForm()"><img class="search_icon" src="../../images/search_icon.png"></button>
+        </form>
+        <h2>Foram encontrados {{sales_orders.length+purchase_orders.length+materials.length+equipments.length+workforce.length}} itens</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">Pedidos de Venda</td>
+                <td>({{sales_orders.length}} itens encontrados)</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in sales_orders">
+                <td>#{{item.SalesOrderID}}</td>
+                <td>{{item.MaterialName}}</td>
+                <td>Qtd: {{item.Quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">Pedidos de Compra</td>
+                <td>({{purchase_orders.length}} itens encontrados)</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in purchase_orders">
+                <td>#{{item.PurchaseOrderID}}</td>
+                <td>{{item.MaterialName}}</td>
+                <td>Qtd: {{item.Quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="3">Produtos</td>
+                <td>({{materials.length}} itens encontrados)</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in materials">
+                <td>#{{item.MaterialID}}</td>
+                <td colspan="2">{{item.MaterialName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="3">Equipamentos</td>
+                <td>({{equipments.length}} itens encontrados)</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in equipments">
+                <td>#{{item.EquipmentID}}</td>
+                <td colspan="2">{{item.EquipmentName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">Mão de obra</td>
+                <td>({{workforce.length}} itens encontrados)</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in workforce">
+                <td>#{{item.WorkforceID}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Shift}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
