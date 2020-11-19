@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\source\\repos\\WebApplication3\\Vitor_Challenge_Dev.csproj": {}
+    "C:\\Users\\vitor\\Source\\Repos\\vitorjahn1\\dev-challenge\\Vitor_Challenge_Dev.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\source\\repos\\WebApplication3\\Vitor_Challenge_Dev.csproj": {
+    "C:\\Users\\vitor\\Source\\Repos\\vitorjahn1\\dev-challenge\\Vitor_Challenge_Dev.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\source\\repos\\WebApplication3\\Vitor_Challenge_Dev.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\Source\\Repos\\vitorjahn1\\dev-challenge\\Vitor_Challenge_Dev.csproj",
         "projectName": "Vitor_Challenge_Dev",
-        "projectPath": "C:\\Users\\vitor\\source\\repos\\WebApplication3\\Vitor_Challenge_Dev.csproj",
+        "projectPath": "C:\\Users\\vitor\\Source\\Repos\\vitorjahn1\\dev-challenge\\Vitor_Challenge_Dev.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\source\\repos\\WebApplication3\\obj\\",
+        "outputPath": "C:\\Users\\vitor\\Source\\Repos\\vitorjahn1\\dev-challenge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
