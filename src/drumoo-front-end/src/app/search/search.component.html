@@ -1,0 +1,130 @@
+<div class="container mx-3">
+  <div class="row text-center w-100">
+    <div class=" col-md-9">
+  <img src="../assets/logo_multisearch.png" alt="Mutiserach" />
+  </div>
+  </div>
+
+    <div class="row">
+    <div class=" col-md-9">
+      <form class="input-group d-flex" >
+          <input type="text" class="form-control text-secondary" name="search" placeholder="Buscar Produto"
+          aria-label="Digite o nome do produto" aria-describedby="search"  [formControl]="queryfield">
+          <button class="btn" type="submit" id="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+           </svg></button>
+        </form>
+            </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md-9">
+      <mark class="text-secondary bg-transparent">Foram encontrado(s) ... resultado(s).</mark>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+    <table class="table table-borderless table-responsive">
+    <div  class="border d-flex rounded-top">
+    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark ">Pedidos de Vendas</div>
+    <mark class="p-2  text-secondary bg-transparent">(5 itens encontrados)</mark>
+    </div>
+     <div class="border rounded-bottom d-flex">
+    <tbody class="w-100">
+      <tr class=" p-2  w-100 d-flex " *ngFor="let orders of sales_orders$ | async">
+        <div class=" w-25 min mx-3" style=color:red><ins>#{{orders.SalesOrderID}}</ins></div>
+        <div class="w-50  mx-1">{{orders.MaterialName}}</div>
+        <div class="w-25  mx-1 text-center">Qtd: {{orders.Quantity}} pç</div>
+      </tr>
+      </tbody>
+    </div>
+  </table>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+    <table class="table table-borderless table-responsive">
+    <div  class="border d-flex rounded-top">
+    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Pedidos de Compra</div>
+    <mark class="p-2  text-secondary bg-transparent">(5 itens encontrados)</mark>
+    </div>
+     <div class="border rounded-bottom d-flex">
+    <tbody class="w-100">
+      <tr class="text-left p-2  w-100  d-flex " *ngFor="let purchase of purchase_orders$ | async">
+        <div class=" mx-3 w-25" style=color:red><ins>#{{purchase.PurchaseOrderID}}</ins></div>
+        <div class="w-50 mx-1 ">{{purchase.MaterialName}}</div>
+        <div class="w-25 mx-1 text-center">Qtd: {{purchase.Quantity}} pç</div>
+      </tr>
+      </tbody>
+    </div>
+  </table>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+    <table class="table table-borderless table-responsive">
+    <div  class="border d-flex rounded-top">
+    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Produtos</div>
+    <mark class="p-2  text-secondary bg-transparent">(5 itens encontrados)</mark>
+    </div>
+     <div class="border rounded-bottom d-flex">
+    <tbody class="w-100">
+      <tr class="text-left p-2  w-100  d-flex" *ngFor="let product of materials$ | async">
+        <div class=" mx-3 w-25 " style=color:red><ins>#{{ product.MaterialID}}</ins></div>
+        <div class="w-75 mx-1 ">{{ product.MaterialName}}"</div>
+
+      </tr>
+      </tbody>
+    </div>
+  </table>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+    <table class="table table-borderless table-responsive">
+    <div  class="border d-flex rounded-top">
+    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Equipamentos</div>
+    <mark class="p-2  text-secondary bg-transparent">(5 itens encontrados)</mark>
+    </div>
+     <div class="border rounded-bottom d-flex">
+    <tbody class="w-100">
+      <tr class="text-left p-2  w-100  d-flex" *ngFor="let equipment of equipments$ | async">
+        <div class=" mx-3 w-25" style=color:red><ins>#{{ equipment.EquipmentID}}</ins></div>
+        <div class="w-75 mx-1 ">{{ equipment.EquipmentName}}</div>
+      </tr>
+      </tbody>
+    </div>
+  </table>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+    <table class="table table-borderless table-responsive">
+    <div  class="border d-flex rounded-top">
+    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Mão de obra</div>
+    <mark class="p-2  text-secondary bg-transparent">(5 itens encontrados)</mark>
+    </div>
+     <div class="border rounded-bottom d-flex">
+    <tbody class="w-100">
+      <tr class="text-left p-2  w-100  d-flex " *ngFor="let workhandle of workforce$ | async">
+        <div class=" mx-3 w-25 " style=color:red><ins>#{{workhandle.WorkforceID}}</ins></div>
+        <div class="w-50 mx-1 ">{{ workhandle.Name}}</div>
+        <div class="w-25 mx-1 text-center">{{ workhandle.Shift}}</div>
+      </tr>
+      </tbody>
+    </div>
+  </table>
+  </div>
+  </div>
+    </div>
+
+
+
+
+
