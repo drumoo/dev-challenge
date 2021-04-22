@@ -6,6 +6,7 @@ import { Purchase_orders } from './dataInterfaces/purchase_orders';
 import { Sales_orders } from './dataInterfaces/sales_orders';
 import { Workforce } from './dataInterfaces/workforce';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,26 +21,57 @@ export class SearchService {
   }
   constructor(private http: HttpClient) { }
 
-listEquipments() {
-  return this.http.get<Equipments[]>(this.API.url1);
+listEquipments(value:any) {
+let fields='EquipmentID,EquipmentName'
+let params = {
+  _embed:fields,
+  q:value
+}
+  return this.http.get<Equipments[]>(this.API.url1 , {params});
 
 }
-listMatrials() {
-  return this.http.get<Materials[]>(this.API.url2);
-}
-
-listPurchase_orders() {
-  return this.http.get<Purchase_orders[]>(this.API.url3);
-}
-
-listSales_orders() {
-  return this.http.get<Sales_orders[]>(this.API.url4);
+listMatrials(value:any) {
+  let fields='MaterialID,MaterialName'
+let params = {
+  _embed:fields,
+  q:value
 
 }
-
-listWorforce() {
-  return this.http.get<Workforce[]>(this.API.url5);
+return this.http.get<Materials[]>(this.API.url2, {params});
 }
+
+listPurchase_orders(value:any) {
+  let fields='PurchaseOrderID,MaterialName'
+  let params = {
+    _embed:fields,
+    q:value
+
+  }
+
+  return this.http.get<Purchase_orders[]>(this.API.url3,{params});
+}
+
+listSales_orders(value:any) {
+  let fields='SalesOrderID,MaterialName'
+  let params = {
+    _embed:fields,
+    q:value
+
+  }
+
+  return this.http.get<Sales_orders[]>(this.API.url4,{params});
+
+}
+
+listWorforce(value:any) {
+  let fields='WorkforceID,Name,Shift'
+  let params = {
+    _embed:fields,
+    q:value
+
+  }
+  return this.http.get<Workforce[]>(this.API.url5,{params})
+  }
 
 
 

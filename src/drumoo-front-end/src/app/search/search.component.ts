@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import {  Observable} from 'rxjs';
 import { Equipments } from '../dataInterfaces/equipments';
 import { Materials } from '../dataInterfaces/materials';
@@ -14,27 +14,41 @@ import { SearchService } from '../search.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+formulario:FormGroup;
 
-queryfield = new FormControl();
+  equipments$: Equipments[]=[];
+  materials$: Materials[]=[];
+  purchase_orders$: Purchase_orders[]=[];
+  sales_orders$: Sales_orders[]=[];
+  workforce$: Workforce[]=[];
 
 
+  constructor(private service: SearchService) {
+    this.formulario= new FormGroup({
+      search:new FormControl()
+    })
+  }
 
-
-  equipments$!: Observable<Equipments[]>;
-  materials$!: Observable<Materials[]>;
-  purchase_orders$!: Observable<Purchase_orders[]>;
-  sales_orders$!: Observable<Sales_orders[]>;
-  workforce$!: Observable<Workforce[]>;
-
-  constructor(private service: SearchService) { }
 
   ngOnInit(): void {
-  this.equipments$ = this.service.listEquipments()
-  this.materials$ = this.service.listMatrials()
-  this.purchase_orders$ = this.service.listPurchase_orders()
-  this.sales_orders$ = this.service.listSales_orders()
-  this.workforce$ = this.service.listWorforce()
+
 
   }
+  searchProducts() {
+ let value=this.formulario.get('search')?.value
+
+this.service.listEquipments(value).subscribe(data => this.equipments$=[...data]);
+
+this.service.listMatrials(value).subscribe(data => this.materials$ = [...data]);
+
+this.service.listPurchase_orders(value).subscribe(data => this.purchase_orders$= [...data]);
+
+this.service.listSales_orders(value).subscribe(data => this.sales_orders$ = [...data]);
+
+this.service.listWorforce(value).subscribe(data => this.workforce$ = [...data]);
+
+this.formulario.reset()
+
+}
 
 }

@@ -9,7 +9,7 @@
   display: flex;
   margin-bottom: 30px;
 
-    input {
+   & input {
   flex: 1;
   border:1px solid #a9acaf;
   border-radius: 5px 0 0 5px;
@@ -17,10 +17,7 @@
   height:40px;
   padding: 0 24px;
   color:#242627;
-
-
     }
-
      & button {
       max-width:60px;
       height:40px;
@@ -28,8 +25,6 @@
       border-radius:0 5px 5px 0;
       transition: background-color 0,2s;
       background-color: transparent;
-
-
 
       &:hover {
               background-color: #e0e2e4;
