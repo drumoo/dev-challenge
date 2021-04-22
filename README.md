@@ -1,3 +1,9 @@
+# Notas
+```
+npm run serv = client: localhost:8080
+npm run dev  = api: localhost:3000
+```
+
 # Drumoo - Full Stack Developer Challenge
 Desafio para você que quer trabalhar conosco!
 
