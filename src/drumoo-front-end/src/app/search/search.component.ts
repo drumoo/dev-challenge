@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import {  Observable} from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Equipments } from '../dataInterfaces/equipments';
 import { Materials } from '../dataInterfaces/materials';
 import { Purchase_orders } from '../dataInterfaces/purchase_orders';
@@ -25,15 +24,15 @@ formulario:FormGroup;
 
   constructor(private service: SearchService) {
     this.formulario= new FormGroup({
-      search:new FormControl()
+      search:new FormControl('',[Validators.required])
     })
   }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
 
-  }
+
   searchProducts() {
  let value=this.formulario.get('search')?.value
 
@@ -52,3 +51,4 @@ this.formulario.reset()
 }
 
 }
+

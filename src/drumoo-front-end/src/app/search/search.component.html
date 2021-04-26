@@ -1,15 +1,15 @@
-<div class="container mx-3 clearfix">
+<div class="container mx-auto">
   <div class="row text-center w-100">
-    <div class=" col-md-9">
+    <div class="col-md-9">
   <img src="../assets/logo_multisearch.png" alt="Mutiserach" />
   </div>
   </div>
 
     <div class="row">
-    <div class="col-md-9">
+    <div class=" col-md-9">
       <form class="input-group d-flex" [formGroup]="formulario" (ngSubmit)="searchProducts()">
           <input type="text" class="form-control text-secondary" name="search" placeholder="Buscar Produto" formControlName="search"
-          aria-label="Digite o nome do produto" aria-describedby="search">
+          aria-label="Buscar produto" aria-describedby="search">
           <button class="btn" type="submit" id="search">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -18,132 +18,121 @@
             </div>
     </div>
 
-    <div class="row mb-4">
+    <div class="row results mb-5">
       <div class="col-md-9">
-      <mark class="text-secondary bg-transparent">Foram encontrado(s) {{sales_orders$.length + purchase_orders$.length
-         + materials$.length + equipments$.length + workforce$.length }} resultado(s).</mark>
+      <mark class="text-secondary bg-transparent mark font">Foram encontrado(s) {{sales_orders$.length + purchase_orders$.length
+         + materials$.length + equipments$.length + workforce$.length }} resultado(s)</mark>
   </div>
   </div>
 
   <div class="row">
-    <div class="col-md-9">
-    <table class="table table-borderless table-responsive">
-    <div  class="border d-flex rounded-top">
-    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark ">Pedidos de Vendas</div>
-      <mark class="p-2  text-secondary bg-transparent" *ngIf="sales_orders$.length">({{sales_orders$.length}} iten(s) encontrado)</mark>
-      <mark class="p-2  text-secondary bg-transparent" *ngIf="sales_orders$.length === 0">(Nenhum item encontrado)</mark>
+    <div class=" col-md-9">
+  <div class="card border d-flex rounded-bottom mb-3" >
+    <div class="card-header bg-transparent  d-flex p-2">
+      <div class="flex-grow-1 font-weight-bold h3 w-auto text-dark">Pedidos de Vendas</div>
+      <mark class="bg-transparent mx-2 text-secondary w-auto font" *ngIf="sales_orders$.length > 0">({{sales_orders$.length}} iten(s) encontrado)</mark>
+      <mark class="bg-transparent mx-2 text-secondary  w-auto font" *ngIf="sales_orders$.length == 0">(Nenhum item encontrado)</mark>
     </div>
-     <div class="border rounded-bottom text-center d-flex">
-    <tbody class="w-100"  *ngIf="sales_orders$.length > 0 ;else noExists" >
-      <tr class=" p-2  w-100 d-flex " *ngFor="let orders of sales_orders$">
-        <div class=" w-25 min text-left mx-3" style=color:red><ins>#{{orders.SalesOrderID}}</ins></div>
-        <div class="w-50 text-left mx-1">{{orders.MaterialName}}</div>
-        <div class="w-25  mx-1 text-center">Qtd: {{orders.Quantity}} pç</div>
-        </tr>
-      </tbody>
+  <div class=" text-center  d-flex">
+    <div class="w-100" *ngIf="sales_orders$.length > 0 ;else noExists">
+    <div class="card-body font  text-left p-2 bg-transparent d-flex " *ngFor="let orders of sales_orders$">
+      <div class=" mx-3 w-25 text-left " style=color:red><ins>#{{orders.SalesOrderID}}</ins></div>
+        <div class="w-50 mx-1 ">{{ orders.MaterialName}}</div>
+        <div class="w-25 mx-1 text-center">Qtd: {{orders.Quantity}} pç</div>
     </div>
-  </table>
-<ng-template #noExists >
-<div class="text-secondary bg-transparent text-center w-100">Nenhum item encontrado</div>
-</ng-template>
-
+    </div>
   </div>
+  </div>
+    </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-9">
-    <table class="table table-borderless table-responsive">
-    <div  class="border d-flex rounded-top">
-    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Pedidos de Compra</div>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="purchase_orders$.length > 0">({{purchase_orders$.length}} iten(s) encontrado)</mark>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="purchase_orders$.length === 0">(Nenhum item encontrado)</mark>
-  </div>
-     <div class="border rounded-bottom text-center d-flex">
-    <tbody class="w-100" *ngIf="purchase_orders$.length > 0 ;else noExists" >
-      <tr class="text-left p-2  w-100  d-flex " *ngFor="let purchase of purchase_orders$">
-        <div class=" mx-3 w-25" text-left style=color:red><ins>#{{purchase.PurchaseOrderID}}</ins></div>
-        <div class="w-50 mx-1 ">{{purchase.MaterialName}}</div>
+    <div class="row">
+    <div class=" col-md-9">
+  <div class="card border d-flex rounded-bottom mb-3 w-100" >
+    <div class="card-header bg-transparent w-100 d-flex p-2">
+      <div class="flex-grow-1 font-weight-bold h3 w-auto text-dark">Pedidos de Compra</div>
+      <mark class="bg-transparent mx-2 text-secondary w-auto font" *ngIf="purchase_orders$.length > 0">({{purchase_orders$.length}} iten(s) encontrado)</mark>
+      <mark class="bg-transparent mx-2 text-secondary w-auto font" *ngIf="purchase_orders$.length == 0">(Nenhum item encontrado)</mark>
+    </div>
+  <div class=" text-center  d-flex">
+    <div class="w-100" *ngIf="purchase_orders$.length > 0 ;else noExists">
+    <div class="card-body font w-100 text-left p-2 bg-transparent d-flex " *ngFor="let purchase of purchase_orders$">
+      <div class=" mx-3 w-25 text-left " style=color:red><ins>#{{purchase.PurchaseOrderID}}</ins></div>
+        <div class="w-50 mx-1 ">{{ purchase.MaterialName}}</div>
         <div class="w-25 mx-1 text-center">Qtd: {{purchase.Quantity}} pç</div>
-      </tr>
-      </tbody>
     </div>
-  </table>
-  <ng-template #noExists >
-    <div class=" text-secondary bg-transparent text-center w-100">Nenhum item encontrado</div>
-    </ng-template>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="  col-md-9">
+  <div class="card border d-flex rounded-bottom mb-3 w-100" >
+    <div class="card-header bg-transparent w-100 d-flex justify-content-between p-2">
+      <div class="flex-grow-1 font-weight-bold w-auto h3 text-dark">Produtos</div>
+      <mark class="bg-transparent mx-2 text-secondary w-auto font" *ngIf="materials$.length > 0">({{materials$.length}} iten(s) encontrado)</mark>
+      <mark class="bg-transparent mx-2 text-secondary w-auto font" *ngIf="materials$.length == 0">(Nenhum item encontrado)</mark>
+    </div>
+  <div class=" text-center  d-flex">
+    <div class="w-100" *ngIf="materials$.length > 0 ;else noExists">
+    <div class="card-body  font w-100 text-left p-2 bg-transparent d-flex " *ngFor="let product of materials$">
+      <div class=" mx-3 w-25" style=color:red><ins>#{{ product.MaterialID}}</ins></div>
+      <div class="w-75 mx-1 ">{{ product.MaterialName}}</div>
+    </div>
+    </div>
+  </div>
+  </div>
   </div>
   </div>
 
   <div class="row">
-    <div class="col-md-9">
-    <table class="table table-borderless table-responsive">
-    <div  class="border d-flex rounded-top">
-    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Produtos</div>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="materials$.length > 0">({{materials$.length}} iten(s) encontrado)</mark>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="materials$.length === 0">(Nenhum item encontrado)</mark>
-  </div>
-     <div class="border rounded-bottom text-center d-flex">
-    <tbody class="w-100" *ngIf="materials$.length > 0 ;else noExists">
-      <tr class="text-left p-2  w-100  d-flex" *ngFor="let product of materials$">
-        <div class=" mx-3 w-25 " style=color:red><ins>#{{product.MaterialID}}</ins></div>
-        <div class="w-75 mx-1 ">{{ product.MaterialName}}"</div>
-      </tr>
-      </tbody>
+    <div class="  col-md-9">
+  <div class="card border d-flex rounded-bottom mb-3 w-100" >
+    <div  id="headerCard" class="card-header bg-transparent  d-flex  p-2">
+      <div class="flex-grow-1 font-weight-bold  h3 text-dark">Equipamentos</div>
+      <mark class="bg-transparent mx-2 text-secondary  font" *ngIf="equipments$.length > 0">({{equipments$.length}} iten(s) encontrado)</mark>
+      <mark class="bg-transparent mx-2 text-secondary  font" *ngIf="equipments$.length == 0">(Nenhum item encontrado)</mark>
     </div>
-  </table>
-  <ng-template  #noExists >
-    <div class=" text-secondary bg-transparent text-center w-100">Nenhum item encontrado</div>
-    </ng-template>
+  <div class=" text-center  d-flex">
+    <div class="w-100" *ngIf="equipments$.length > 0 ;else noExists">
+    <div class="card-body font w-100 text-left p-2 bg-transparent d-flex " *ngFor="let equipment of equipments$">
+      <div class=" mx-3 w-25" style=color:red><ins>#{{ equipment.EquipmentID}}</ins></div>
+      <div class="w-75 mx-1 ">{{ equipment.EquipmentName}}</div>
+    </div>
+    </div>
+  </div>
+  </div>
   </div>
   </div>
 
   <div class="row">
-    <div class="col-md-9">
-    <table class="table table-borderless table-responsive">
-    <div  class="border d-flex rounded-top">
-    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Equipamentos</div>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="equipments$.length > 0">({{equipments$.length}} iten(s) encontrado)</mark>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="equipments$.length === 0">(Nenhum item encontrado)</mark>
+    <div class=" col-md-9">
+  <div class="card border d-flex rounded-bottom mb-3 w-100" >
+    <div class="card-header bg-transparent  d-flex w-100 p-2">
+      <div class="flex-grow-1 font-weight-bold h3 text-dark w-auto">Mão de obra</div>
+      <mark class="bg-transparent mx-2 text-secondary font w-auto" *ngIf="workforce$.length > 0">({{workforce$.length}} iten(s) encontrado)</mark>
+      <mark class="bg-transparent mx-2 text-secondary font w-auto" *ngIf="workforce$.length == 0">(Nenhum item encontrado)</mark>
     </div>
-     <div class="border rounded-bottom  text-center d-flex">
-    <tbody class="w-100" *ngIf="equipments$.length > 0 ;else noExists">
-      <tr class="text-left p-2  w-100  d-flex" *ngFor="let equipment of equipments$">
-        <div class=" mx-3 w-25" style=color:red><ins>#{{ equipment.EquipmentID}}</ins></div>
-        <div class="w-75 mx-1 ">{{ equipment.EquipmentName}}</div>
-      </tr>
-      </tbody>
-    </div>
-  </table>
-  <ng-template #noExists >
-    <div class=" text-secondary bg-transparent text-center w-100">Nenhum item encontrado</div>
-    </ng-template>
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-9">
-    <table class="table table-borderless table-responsive">
-    <div  class="border d-flex rounded-top">
-    <div class="flex-grow-1 p-2 font-weight-bold h4 text-dark">Mão de obra</div>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="workforce$.length > 0">({{workforce$.length}} iten(s) encontrado)</mark>
-    <mark class="p-2  text-secondary bg-transparent" *ngIf="workforce$.length == 0">(Nenhum item encontrado)</mark>
-    </div>
-     <div class="border rounded-bottom text-center d-flex">
-    <tbody class="w-100" *ngIf="workforce$.length > 0 ;else noExists">
-      <tr class="text-left p-2  w-100  d-flex " *ngFor="let workhandle of workforce$">
-        <div class=" mx-3 w-25 text-left " style=color:red><ins>#{{workhandle.WorkforceID}}</ins></div>
+  <div class=" text-center  d-flex">
+    <div class="w-100" *ngIf="workforce$.length > 0 ;else noExists">
+    <div class="card-body  font w-100 text-left p-2 bg-transparent d-flex " *ngFor="let workhandle of workforce$">
+      <div class=" mx-3 w-25 text-left " style=color:red><ins>#{{workhandle.WorkforceID}}</ins></div>
         <div class="w-50 mx-1 ">{{ workhandle.Name}}</div>
         <div class="w-25 mx-1 text-center">{{ workhandle.Shift}}</div>
-      </tr>
-      </tbody>
     </div>
-  </table>
+    </div>
+  </div>
+  </div>
   <ng-template #noExists >
-    <div class="text-secondary bg-transparent text-center w-100">Nenhum item encontrado</div>
+    <div class=" font text-secondary  bg-transparent text-center w-100">Nenhum item encontrado</div>
     </ng-template>
   </div>
   </div>
-    </div>
+</div>
+
+
 
 
 
