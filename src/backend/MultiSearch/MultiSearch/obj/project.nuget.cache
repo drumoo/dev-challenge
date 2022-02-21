@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dLaDQWCYzPKCirEgrhbC4dbzWVyG7y/eNBB1GXUInJG7SHYtmxCr/2uobiDqI8wI9uBA3J5pHGW1UIToUy99Hw==",
+  "dgSpecHash": "e7gXPz9OwV/BCnwvcFvk05DjIPe9XBCIv6xZJM542PHLL5XtN94hvpZKeWp4lJwcme76oT2L1o3D6KnIpZdCCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\filip\\source\\repos\\MultiSearch\\MultiSearch\\MultiSearch.csproj",
+  "projectFilePath": "C:\\dev-challenge\\src\\backend\\MultiSearch\\MultiSearch\\MultiSearch.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
