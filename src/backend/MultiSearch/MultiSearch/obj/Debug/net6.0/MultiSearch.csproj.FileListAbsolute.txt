@@ -54,3 +54,8 @@ C:\dev-challenge\src\backend\MultiSearch\MultiSearch\obj\Debug\net6.0\MultiSearc
 C:\dev-challenge\src\backend\MultiSearch\MultiSearch\obj\Debug\net6.0\ref\MultiSearch.dll
 C:\dev-challenge\src\backend\MultiSearch\MultiSearch\obj\Debug\net6.0\MultiSearch.pdb
 C:\dev-challenge\src\backend\MultiSearch\MultiSearch\obj\Debug\net6.0\MultiSearch.genruntimeconfig.cache
+C:\dev-challenge\src\backend\MultiSearch\MultiSearch\bin\Debug\net6.0\Data\equipments.json
+C:\dev-challenge\src\backend\MultiSearch\MultiSearch\bin\Debug\net6.0\Data\materials.json
+C:\dev-challenge\src\backend\MultiSearch\MultiSearch\bin\Debug\net6.0\Data\purchase_orders.json
+C:\dev-challenge\src\backend\MultiSearch\MultiSearch\bin\Debug\net6.0\Data\sales_orders.json
+C:\dev-challenge\src\backend\MultiSearch\MultiSearch\bin\Debug\net6.0\Data\workforce.json
