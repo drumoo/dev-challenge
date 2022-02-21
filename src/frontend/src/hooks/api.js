@@ -2,7 +2,6 @@ import axios from "axios";
 
 const URL_API = "https://localhost:7113/";
 
-
 export const api = {
     getEquipments: async (key) => {
         key = (key.trim()) ? ("/" + key) : "";        
