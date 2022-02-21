@@ -19,17 +19,17 @@ function App() {
 
   useEffect(()=>{
  
-    loadApi();
+    loadApi(inputSearch);  
 
   },[inputSearch])
 
-  const loadApi = async () => {
+  const loadApi = async (key) => {
 
-    let equipmentsApi = await api.getEquipments(inputSearch);
-    let materialsApi = await api.getMaterials(inputSearch);
-    let purchaseOrdersApi = await api.getPurchaseOrders(inputSearch);
-    let salesOrdersApi = await api.getSalesOrders(inputSearch);
-    let workforceApi = await api.getWorkforce(inputSearch);
+    let equipmentsApi = await api.getEquipments(key);
+    let materialsApi = await api.getMaterials(key);
+    let purchaseOrdersApi = await api.getPurchaseOrders(key);
+    let salesOrdersApi = await api.getSalesOrders(key);
+    let workforceApi = await api.getWorkforce(key);
     
     setEquipments(equipmentsApi);
     setMaterials(materialsApi);
@@ -49,7 +49,7 @@ function App() {
       <C.Header>
             <img src={logo} />
             <C.Search>
-                <C.Input onChange={handleSearch}/>
+                <C.Input onChange={handleSearch} />
                 <a><img src={imgSearch} alt="Lupa" /></a>
             </C.Search>
       </C.Header>
