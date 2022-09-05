@@ -1,0 +1,68 @@
+.resultados,
+.mat-header-row {
+  display: none;
+}
+
+.resultados.exibir {
+  display: block;
+  width: 100%;
+}
+
+.mat-table,
+.mat-card,
+.mat-toolbar,
+app-data-erp {
+  width: 100%;
+  box-shadow: none !important;
+}
+
+.mat-card{
+  padding: 0px !important;
+  border: 1px solid var(--cor-1);
+  margin-bottom: 40px;
+}
+
+.mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: var(--cor0);
+  border-bottom: 1px solid var(--cor-1);
+}
+
+.mat-toolbar span+span {
+  padding-left: 4px;
+}
+
+.mat-cell {
+  border: none !important;
+  font: 400 1.125rem "Roboto", sans-serif;
+}
+
+.mat-cell:first-child {
+  text-decoration: underline;
+}
+
+#vazio {
+  width: 100%;
+}
+
+#vazio td {
+  text-align: center;
+  padding: 16px 0;
+}
+
+
+
+@media(max-width:600px) {
+  .mat-cell {
+    font-size:0.875rem;
+  }
+}
+
+@media(max-width:450px) {
+  .mat-cell {
+    font-size:0.75rem;
+    padding: 6px !important;
+  }
+}

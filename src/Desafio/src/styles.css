@@ -1,0 +1,29 @@
+/* Utilidades */
+@import "styles/utilidades/tipografia.css";
+@import "styles/utilidades/cores.css";
+
+/* Main */
+@import "styles/main/main.css";
+@import "styles/main/search-bar.css";
+@import "styles/main/table.css";
+@import "styles/main/loading.css";
+
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  color: #111111;
+}
+
+h1,
+p {
+  margin: 0px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

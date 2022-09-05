@@ -1,0 +1,27 @@
+.container {
+    box-sizing: border-box;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conteudo {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 12px 0px;
+}
+
+
+
+@media(max-width:600px) {
+  .conteudo {
+    max-width: 400px;
+    padding: 12px;
+  }
+}
+
+

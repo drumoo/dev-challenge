@@ -1,0 +1,30 @@
+/**
+* Todas tipografias utilizadas no projeto se encontram nesse arquivo,
+* facilitando a manutenção e alteração.*/
+
+.font-1-s {
+    font: 400 0.875rem "Roboto", sans-serif;
+}
+
+.font-1-m {
+    font: 400 1.25rem "Roboto", sans-serif;
+}
+
+.font-1-l,
+.font-1-l-b {
+    font: 400 1.375rem "Roboto", sans-serif;
+}
+
+.font-1-l-b {
+    font-weight: 700;
+}
+
+@media(max-width:450px) {
+  .font-1-l-b {
+    font-size: 1.25rem;
+  }
+
+  .font-1-s {
+    font-size: 0.625rem;
+  }
+}

@@ -1,0 +1,4 @@
+C:\Users\ramon\OneDrive - Student Ambassadors\Desktop\Code\projeto-teste\Desafio\Desafio\obj\Debug\Desafio.esproj.SuggestedBindingRedirects.cache
+C:\Users\ramon\OneDrive - Student Ambassadors\Desktop\Code\projeto-teste\Desafio\Desafio\obj\Debug\Desafio.esproj.CoreCompileInputs.cache
+C:\Users\ramon\OneDrive - Student Ambassadors\Desktop\Code\ramon-cardoso\src\Desafio\obj\Debug\Desafio.esproj.SuggestedBindingRedirects.cache
+C:\Users\ramon\OneDrive - Student Ambassadors\Desktop\Code\ramon-cardoso\src\Desafio\obj\Debug\Desafio.esproj.CoreCompileInputs.cache

@@ -1,0 +1,213 @@
+<!--  Barra de Pesquisa -->
+
+<div class="search">
+  <form onsubmit="return false">
+    <input id="search-bar" class="search-bar" type="search" placeholder="Pesquisar" aria-label="Search" />
+    <button class="btn-search" type="submit" (click)="onSearch()">
+      <img class="lupa-img" src="../assets/images/lupa.svg" alt="Lupa" width="24" height="24" />
+    </button>
+  </form>
+</div>
+
+<div class="resultados" id="resultados">
+  <!--  Template do spinner de carregamento -->
+
+  <ng-template #loading>
+    <div id="loading">
+      <mat-spinner [diameter]="60"></mat-spinner>
+    </div>
+  </ng-template>
+
+  <!--  Template de tabela vazia -->
+
+  <ng-template #vazio>
+    <ng-container>
+      <table id="vazio" class="font-1-s cor-2">
+        <td>nenhum item encontrado</td>
+      </table>
+    </ng-container>
+  </ng-template>
+
+  <!--  Containers carregando o retorno de cada tabela em uma variável -->
+
+  <ng-container *ngIf="sales_orders$ | async; let sales_orders; else: loading">
+    <ng-container *ngIf="purchase_orders$ | async; let purchase_orders; else: loading">
+      <ng-container *ngIf="materials$ | async; let materials; else: loading">
+        <ng-container *ngIf="equipments$ | async; let equipments; else: loading">
+          <ng-container *ngIf="workforce$ | async; let workforce; else: loading">
+            
+            <!--  Quantidade de itens encontrados -->
+
+            <div class="font-1-s cor-2">
+              <span class="total-encontrado">
+                Foram encontrados
+                {{
+                sales_orders.length +
+                purchase_orders.length +
+                materials.length +
+                equipments.length +
+                workforce.length
+                }}
+                resultados.
+              </span>
+
+              <!--  Tabela de Pedidos de Venda -->
+
+              <mat-card>
+                <mat-toolbar>
+                  <span class="font-1-l-b cor-4">Pedidos de Venda</span>
+                  <span class="font-1-s cor-2">({{ sales_orders.length }} Itens encontrados)</span>
+                </mat-toolbar>
+                <table mat-table [dataSource]="sales_orders"
+                *ngIf="sales_orders.length > 0; else vazio">
+                  <ng-container matColumnDef="SalesOrderID">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td class="cor-p1" mat-cell *matCellDef="let data">
+                      #{{ data.materialID }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="MaterialName">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">
+                      {{ data.materialName }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="Quantity">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">
+                      Qtd: {{ data.quantity }} pç
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumnsSalesOrders"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumnsSalesOrders"></tr>
+                </table>
+              </mat-card>
+
+              <!--  Tabela de Pedidos de Compra -->
+
+              <mat-card>
+                <mat-toolbar>
+                  <span class="font-1-l-b cor-4">Pedidos de Compra</span>
+                  <span class="font-1-s cor-2">({{ purchase_orders.length }} Itens encontrados)</span>
+                </mat-toolbar>
+                <table mat-table [dataSource]="purchase_orders" class="mat-elevation-z8"
+                *ngIf="purchase_orders.length > 0; else vazio">
+                  <ng-container matColumnDef="PurchaseOrderID">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td class="cor-p1" mat-cell *matCellDef="let data">
+                      #{{ data.materialID }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="MaterialName">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">
+                      {{ data.materialName }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="Quantity">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">
+                      Qtd: {{ data.quantity }} pç
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumnsPurchaseOrders"></tr>
+                  <tr mat-row *matRowDef="
+                      let row;
+                      columns: displayedColumnsPurchaseOrders
+                    "></tr>
+                </table>
+              </mat-card>
+
+              <!--  Tabela de Produtos -->
+
+              <mat-card>
+                <mat-toolbar>
+                  <span class="font-1-l-b cor-4">Produtos</span>
+                  <span class="font-1-s cor-2">({{ materials.length }} Itens encontrados)</span>
+                </mat-toolbar>
+                <table mat-table [dataSource]="materials" class="mat-elevation-z8"
+                *ngIf="materials.length > 0; else vazio">
+                  <ng-container matColumnDef="MaterialID">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td class="cor-p1" mat-cell *matCellDef="let data">
+                      #{{ data.materialID }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="MaterialName">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">
+                      {{ data.materialName }}
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumnsMaterials"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumnsMaterials"></tr>
+                </table>
+              </mat-card>
+
+              <!--  Tabela de Pedido de Equipamentos -->
+
+              <mat-card>
+                <mat-toolbar>
+                  <span class="font-1-l-b cor-4">Equipamentos</span>
+                  <span class="font-1-s cor-2">({{ equipments.length }} Itens encontrados)</span>
+                </mat-toolbar>
+                <table mat-table [dataSource]="equipments" class="mat-elevation-z8"
+                  *ngIf="equipments.length > 0; else vazio">
+                  <ng-container matColumnDef="EquipmentID">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td class="cor-p1" mat-cell *matCellDef="let data">
+                      #{{ data.equipmentID }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="EquipmentName">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">
+                      {{ data.equipmentName }}
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumnsEquipments"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumnsEquipments"></tr>
+                </table>
+              </mat-card>
+
+              <!--  Tabela de Mão de Obra -->
+
+              <mat-card>
+                <mat-toolbar>
+                  <span class="font-1-l-b cor-4">Mão de Obra</span>
+                  <span class="font-1-s cor-2">({{ workforce.length }} Itens encontrados)</span>
+                </mat-toolbar>
+                <table mat-table [dataSource]="workforce" class="mat-elevation-z8"
+                *ngIf="workforce.length > 0; else vazio">
+                  <ng-container matColumnDef="WorkforceID">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td class="cor-p1" mat-cell *matCellDef="let data">
+                      #{{ data.workforceID }}
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="Name">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let data">{{ data.name }}</td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumnsWorkforce"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumnsWorkforce"></tr>
+                </table>
+              </mat-card>
+            </div>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>

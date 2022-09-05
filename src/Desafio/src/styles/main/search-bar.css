@@ -1,0 +1,51 @@
+.search {
+    width: 100%;
+}
+
+.search>form {
+    display: flex;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid var(--cor-1);
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar:focus,
+.btn-search:focus {
+    border: 1px solid var(--cor-3);
+    outline: none;
+}
+
+.btn-search {
+    cursor: pointer;
+    border: 1px solid var(--cor-1);
+    border-radius: 0 4px 4px 0;
+    background: var(--cor-0);
+}
+
+.btn-search:hover {
+    background: var(--cor-1);
+    transition: 0.4s;
+}
+
+.lupa-img {
+    padding: 6px;
+}
+
+.total-encontrado {
+   display: block;
+   margin: 30px 0;
+}
+
+
+@media(max-width:400px) {
+  .search-bar {
+    padding: 6px;
+  }
+  .lupa-img {
+    padding: 4px;
+}
+}
